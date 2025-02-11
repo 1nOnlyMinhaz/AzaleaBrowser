@@ -15,19 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sql\database.h">
+    <ClInclude Include="src\sql\database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="networking\http\https\ssl\ssl.h">
+    <ClInclude Include="src\networking\http\https\ssl\ssl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="crypt\crypt.h">
+    <ClInclude Include="src\crypt\crypt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cc">
+    <ClCompile Include="src\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+    <None Include="LICENSE" />
   </ItemGroup>
 </Project>

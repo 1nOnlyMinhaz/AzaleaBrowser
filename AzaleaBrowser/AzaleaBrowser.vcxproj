@@ -19,12 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="crypt\crypt.h" />
-    <ClInclude Include="networking\http\https\ssl\ssl.h" />
-    <ClInclude Include="sql\database.h" />
+    <ClInclude Include="src\crypt\crypt.h" />
+    <ClInclude Include="src\networking\http\https\ssl\ssl.h" />
+    <ClInclude Include="src\sql\database.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cc" />
+    <ClCompile Include="src\main.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+    <None Include="README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
