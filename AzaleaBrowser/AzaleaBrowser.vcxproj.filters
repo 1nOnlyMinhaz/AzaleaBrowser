@@ -15,7 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
+    <ClInclude Include="sql\database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="networking\http\https\ssl\ssl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypt\crypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
