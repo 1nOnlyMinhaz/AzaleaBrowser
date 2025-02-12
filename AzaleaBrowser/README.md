@@ -1,3 +1,3 @@
 # Azalea Browser
 
-WIP
+WIP.

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\crypt\crypt.h" />
     <ClInclude Include="src\network\cookies\cookie_base.h" />
     <ClInclude Include="src\network\http\http.h" />
