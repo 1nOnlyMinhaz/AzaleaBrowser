@@ -20,11 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\crypt\crypt.h" />
-    <ClInclude Include="src\networking\http\https\ssl\ssl.h" />
+    <ClInclude Include="src\network\cookies\cookie_base.h" />
+    <ClInclude Include="src\network\http\http.h" />
+    <ClInclude Include="src\network\http\https\https.h" />
+    <ClInclude Include="src\network\http\https\ssl\ssl.h" />
+    <ClInclude Include="src\network\http\requests\requests.h" />
+    <ClInclude Include="src\network\url\url.h" />
     <ClInclude Include="src\sql\database.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cc" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\network\cookies\cookie_base.cpp" />
+    <ClCompile Include="src\network\http\http.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE" />
