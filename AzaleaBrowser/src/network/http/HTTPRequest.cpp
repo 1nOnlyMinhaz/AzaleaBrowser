@@ -1,0 +1,5 @@
+namespace HTTP {
+	class HTTPRequest {
+
+	};
+}

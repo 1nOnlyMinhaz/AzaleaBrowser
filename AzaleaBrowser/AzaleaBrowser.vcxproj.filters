@@ -27,7 +27,7 @@
     <ClInclude Include="src\network\cookies\cookie_base.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\network\http\http.h">
+    <ClInclude Include="src\network\http\HTTPRequest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\network\http\https\https.h">
@@ -42,6 +42,9 @@
     <ClInclude Include="src\network\url\url.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\network\protocols.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -51,6 +54,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\network\http\http.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\http\https\ssl\sslkeylog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\tooltip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\url\url.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\http\HTTPRequest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

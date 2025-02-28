@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,17 +22,22 @@
     <ClInclude Include="src\core\core.h" />
     <ClInclude Include="src\crypt\crypt.h" />
     <ClInclude Include="src\network\cookies\cookie_base.h" />
-    <ClInclude Include="src\network\http\http.h" />
+    <ClInclude Include="src\network\http\HTTPRequest.h" />
     <ClInclude Include="src\network\http\https\https.h" />
     <ClInclude Include="src\network\http\https\ssl\ssl.h" />
     <ClInclude Include="src\network\http\requests\requests.h" />
+    <ClInclude Include="src\network\protocols.h" />
     <ClInclude Include="src\network\url\url.h" />
     <ClInclude Include="src\sql\database.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\tooltip.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\network\cookies\cookie_base.cpp" />
     <ClCompile Include="src\network\http\http.cpp" />
+    <ClCompile Include="src\network\http\HTTPRequest.cpp" />
+    <ClCompile Include="src\network\http\https\ssl\sslkeylog.cpp" />
+    <ClCompile Include="src\network\url\url.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -109,11 +114,12 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\openssl\Lib\x64\Release\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>D:\openssl\Lib\x64\Release\lib\libcrypto.lib;D:\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libcrypto.lib;$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,13 +131,14 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\openssl\Lib\x64\Release\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>D:\openssl\Lib\x64\Release\lib\libcrypto.lib;D:\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libcrypto.lib;$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -141,11 +148,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\openssl\Lib\x64\Release\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>D:\openssl\Lib\x64\Release\lib\libcrypto.lib;D:\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libcrypto.lib;$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,13 +165,14 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\openssl\Lib\x64\Release\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>D:\openssl\Lib\x64\Release\lib\libcrypto.lib;D:\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libcrypto.lib;$(ProjectDir)src\third_party\openssl\Lib\x64\Release\lib\libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
