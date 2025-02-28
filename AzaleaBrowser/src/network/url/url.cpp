@@ -38,8 +38,8 @@ namespace URLParser {
 		if (protocol == "ssh") return Protocol::SSH;
 		if (protocol == "file") return Protocol::FILE;
 		if (protocol.length() == 1) return Protocol::FILE;
-		if (protocol.length() < URLString.length()) return Protocol::CUSTOM;
 		if (protocol.length() == 0) return Protocol::EMPTY; // Special case where there is a colon, but no protocol was specified
+		if (protocol.length() < URLString.length()) return Protocol::CUSTOM;
 		return Protocol::DEFAULT;
 	}
 
